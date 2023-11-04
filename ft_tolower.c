@@ -17,4 +17,3 @@ int	ft_tolower(int c)
 	else
 		return (c);
 }
-
