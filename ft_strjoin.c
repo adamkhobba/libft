@@ -1,36 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 17:03:48 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/11 08:29:22 by akhobba          ###   ########.fr       */
+/*   Created: 2023/11/09 11:00:44 by akhobba           #+#    #+#             */
+/*   Updated: 2023/11/11 11:36:55 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	size_t	i;
+	size_t	l1;
+	size_t	l2;
+	char	*p;
 
+	if (!s1 || !s2)
+		return (NULL);
+	l1 = ft_strlen(s1);
+	l2 = ft_strlen(s2);
+	p = (char *)malloc(sizeof(char) * (l1 + l2 + 1));
+	if (!p)
+		return (NULL);
 	i = 0;
-	while (s[i] != '\0')
+	while (s1[i])
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
+		p[i] = s1[i];
 		i++;
 	}
-	if ((char)c == '\0')
-		return ((char *)&s[i]);
-	return (NULL);
+	i = 0;
+	while (s2[i])
+	{
+		p[l1++] = s2[i++];
+	}
+	p[l1] = '\0';
+	return (p);
 }
-
-/* int main()
+/*
+ int main()
  {
- 	char s1[] = "adam kkhhobba";
-
- 	printf("%s", ft_strchr(s1, 'x'));
+ 	char *s1 = "fdgfdg";
+ 	char *s2 = NULL;
+ 	printf("%s", ft_strjoin(s1,s2));
  }*/

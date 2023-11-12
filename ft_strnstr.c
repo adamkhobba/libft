@@ -1,35 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/10 16:22:03 by akhobba           #+#    #+#             */
+/*   Updated: 2023/11/11 11:08:56 by akhobba          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-//#include "libft.h"
-#include <stdio.h>
-
-#define size_t long unsigned int 
-
-
+#include "libft.h"
+//#include <stdio.h>
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t i;
-	size_t f;
-	char *big2;
-	char *little2;
-		
+	size_t	i;
+	size_t	f;
+
 	i = 0;
-	big2 = (char *)big;
-	little2 = (char *)little;
-	while (big2[i])
+	if (!(big || little))
+		return (NULL);
+	if (ft_strlen(little) == 0)
+		return ((char *)big);
+	while (big[i])
 	{
 		f = 0;
-		while (big[i + f] == little2[f] )
-		{
-			if (little2[f] == '\0')
-			{
-				return  (big2 + i);
-			}
+		while (big[i + f] == little[f] && little[f] && i + f < len)
 			f++;
-		}
+		if (little[f] == '\0')
+			return ((char *)big + i);
 		i++;
 	}
-	return big2;
+	return (NULL);
 }
+/*
 int main ()
 {
 	char big [] = "hunterxhunter";
@@ -37,4 +41,4 @@ int main ()
 	
 	printf("%s",ft_strnstr(big,little,10));
 	return 0;
-}
+}*/

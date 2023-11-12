@@ -1,44 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 13:10:48 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/11 21:07:44 by akhobba          ###   ########.fr       */
+/*   Created: 2023/11/08 21:50:06 by akhobba           #+#    #+#             */
+/*   Updated: 2023/11/11 11:00:16 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
+//#include <stdio.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
+	char	*arr;
 	size_t	j;
-	size_t	dlen;
-	size_t	slen;
 
-	i = 0;
 	j = 0;
-	slen = ft_strlen(src);
-	if (dst == NULL && size == 0)
-		return (slen);
-	dlen = ft_strlen(dst);
-	if (size == 0 || size <= dlen)
-		return (slen + size);
-	while (src[i] != '\0' && i < size - dlen - 1)
+	if (!s)
+		return (NULL);
+	arr = ft_calloc(1, len + 1);
+	if (!arr)
+		return (NULL);
+	if (ft_strlen(s) <= start)
 	{
-		dst[j] = src[i];
-		i++;
-		j++;
+		arr[0] = '\0';
+		return (arr);
 	}
-	dst[j] = '\0';
-	return (dlen + slen);
+	while (s[start] && len > 0)
+	{
+		arr[j] = s[start];
+		start++;
+		j++;
+		len--;
+	}
+	arr[j] = '\0';
+	return (arr);
 }
 /*
-int main ()
+ int main()
 {
-ft_strlcat(NULL, "asdf", 0);
+ 	char    *str;
+
+     str = ft_substr("Hello World", 5, 5);
+     printf("%s\n", str);
+
+     free(str);
 }*/
