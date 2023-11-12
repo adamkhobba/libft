@@ -1,18 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 15:26:14 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/12 17:38:52 by akhobba          ###   ########.fr       */
+/*   Created: 2023/11/12 17:04:15 by akhobba           #+#    #+#             */
+/*   Updated: 2023/11/12 18:03:26 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libf.h"
 
-void	ft_putchar_fd(char c, int fd)
+static int	ft_size(char *s)
 {
-	write(fd, &c, 1);
+	int	i;
+	int	l;	
+
+	i = 0;
+	l = 0;
+	while(s[i])
+	{
+		if (s[i] == c)
+			l++;
+		i++;
+	}
+	l++;
+	return (l);
+}
+
+static int ft_strlen_c()
+{
+
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**arr;
+	size_t	i;
+	size_t	size;
+		
+	i = 0;
+	size = ft_size(s) ;
+	arr = (char **)malloc(size + 1);
+	while (i < size)
+	{
+		arr[i] = (char *)malloc ();
+	}
+	return (arr);
 }

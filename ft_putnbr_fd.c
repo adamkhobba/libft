@@ -6,7 +6,7 @@
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 15:41:36 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/12 16:17:47 by akhobba          ###   ########.fr       */
+/*   Updated: 2023/11/12 17:40:08 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putstr_fd("-2127483648", fd);
 	else if (n < 0)
 	{
-		n = -n;	
+		n = n * (-1);
 		ft_putchar_fd('-', fd);
 		ft_putnbr_fd(n, fd);
 	}
