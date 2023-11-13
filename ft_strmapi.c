@@ -6,7 +6,7 @@
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 10:46:20 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/12 14:19:00 by akhobba          ###   ########.fr       */
+/*   Updated: 2023/11/13 11:44:57 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!s)
 		return (NULL);
 	arr = (char *)malloc(ft_strlen(s) + 1);
-	if (!p)
+	if (!arr)
 		return (NULL);
 	while (s[i])
 	{

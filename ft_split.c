@@ -6,7 +6,7 @@
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 17:04:15 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/13 10:40:18 by akhobba          ###   ########.fr       */
+/*   Updated: 2023/11/13 15:47:27 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,52 +30,50 @@ static size_t	ft_size(char const *s, char c)
 	l++;
 	return (l);
 }
-
-int	ft_suu(char const *s, char c)
+char    **ft_split(char const *s, char c)
 {
-	int	i;
-	int *irr;
-	int	l;
+    char    **arr;
+    size_t    i;
+    size_t    j;
+    size_t    l;
+    size_t    size;
 
-	i = 0;
-	l = 0;
-	while (s[i])
-	{
-			if (s[i] == c)
-				break ;
+    i = 0;
+    l = 0;
+    size = ft_size(s, c) ;
+    arr = (char **)malloc((size + 1) * sizeof(char *));
+    while (l < size)
+    {
+      j = 0;
+      while(s[i])
+      {
+        if (s[i] == c)
+            break  ;
+        i++;
+        j++;
+      }
+        arr[l] = ft_substr(s,(i - j), j);
+        l++;
+		while(s[i] == c)
 			i++;
-	}
-	return (l);
+    }
+	arr[l] = NULL;
+    return (arr);
 }
 
-char	**ft_split(char const *s, char c)
+int main(void)
 {
-	char	**arr;
-	size_t	i;
-	size_t	l;
-	size_t	size;
-		
-	i = 0;
-	l = 0;
-	size = ft_size(s, c) ;
-	arr = (char **)malloc(size + 1);
-	while (i < size)
-	{
-		while ()
-		{
-		}
-		arr[i] = ft_substr(); 	
-		i++;
-	}
-	return (arr);
-}
+    char const *input = "    ";
+    char **result = ft_split(input, ' ');
 
-int main (void)
-{
-	char s[] = "adam khobba ggg";
-	char c = ' '; 
-	int	i;
+    // Use the result array as needed, e.g., print the elements
+    for (size_t i = 0; result[i] != NULL; i++)
+    {
+        printf("%s\n", result[i]);
+        free(result[i]); // Free each allocated substring
+    }
 
-//	printf("%d",ft_size(s,c));
-		printf("%d",ft_suu(s, c));
+    free(result); // Free the array of pointers
+
+    return 0;
 }

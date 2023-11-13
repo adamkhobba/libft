@@ -6,12 +6,13 @@
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 20:54:32 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/13 10:42:52 by akhobba          ###   ########.fr       */
+/*   Updated: 2023/11/13 10:52:57 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 #include "libft.h"
+
 int	ft_atoi(const char *nptr)
 {
 	int		i;
