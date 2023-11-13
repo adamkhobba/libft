@@ -6,7 +6,7 @@
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 17:04:15 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/12 21:27:14 by akhobba          ###   ########.fr       */
+/*   Updated: 2023/11/13 10:40:18 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,11 @@ char	**ft_split(char const *s, char c)
 	arr = (char **)malloc(size + 1);
 	while (i < size)
 	{
-		arr[i] = (char *)malloc (ft_suu(s + l, c));
-		l = ft_suu(s + l, c); 
+		while ()
+		{
+		}
+		arr[i] = ft_substr(); 	
+		i++;
 	}
 	return (arr);
 }
