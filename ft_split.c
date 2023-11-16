@@ -12,68 +12,81 @@
 
 #include "libft.h"
 
-static size_t	ft_size(char const *s, char c)
+static size_t	ft_count_word(char const *s, char c)
 {
-	int	i;
-	int	l;
-	int	j;
+	size_t	check; 
+	size_t	ken;
+	size_t	i;
 
 	i = 0;
-	l = 0;
-	j = ft_strlen(s);
-	while (s[i++] == c)
-		while (s[j--] == c)
-			i = 0;
-	while (s[i] && i < j)
+	ken = 0;
+	while (s[i])
 	{
-		if (s[i] == c)
-			l++;
-		while (s[i] == c)
+		check = 0;
+		while (s[i] == c && s[i])
 			i++;
-		i++;
+		while (s[i] != c && s[i])
+		{
+			if (check == 0)
+			{
+				ken++;
+				check = 1;
+			}
+			i++;
+		}
 	}
-	l++;
-	return (l);
+	return (ken);
 }
 
-static int	ft_a(char const *s, char c)
+static int	ft_put_malloc(char **arr, int index, size_t len)
 {
-	int	i;
+	size_t	p;
 
-	i = 0;
-	while (s[i] == c)
-		i++;
-	if (s[i] == '\0')
-		return (0);
-	else
+	p = index;
+	arr[index] = (char *)malloc (len);
+	if(NULL == arr)
+	{
+		while (p >= 0)
+		{
+			free(arr[p--]); 
+		}
+		free(arr);
 		return (1);
+	}
+	return (0); 
 }
 
-static char	**ft_rspl(char **arr, size_t size, char const *s, char c)
+static int	ft_rspl(char **arr, char const *s, char c)
 {
 	size_t	i;
-	size_t	j;
-	size_t	l;
+	size_t len;
+	size_t	index;	
+	size_t	size;	
 
 	i = 0;
-	l = 0;
-	while (l < size)
+	len = 0;
+	index = 0;
+	size = ft_count_word(s, c);
+	while (index  < size)
 	{
-		j = 0;
-		while (s[i] && s[i] != c)
+		len = 0;
+		while(s[i] && s[i] == c)
+			i++;
+		while(s[i] && s[i] != c)
 		{
-			i++;
-			j++;
+			len++;	
+			i++;	
 		}
-		arr[l++] = ft_substr(s, (i - j), j);
-		if (arr[0][0] == '\0')
-			l--;
-		while (s[i] == c)
-			i++;
+		if (len)
+		{
+			if (ft_put_malloc(arr, index, len + 1))
+				return (1);
+		}
+		ft_strlcpy(arr[index] , s + (i - len), len + 1);
+		index++;
+		i++;
 	}
-	if (l > 0)
-		arr[l] = NULL;
-	return (arr);
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
@@ -82,24 +95,15 @@ char	**ft_split(char const *s, char c)
 	size_t	size;
 	size_t	i;
 
-	if (!s)
+	if (NULL == s)
 		return (NULL);
-	size = ft_size(s, c);
-	i = size;
+	size = ft_count_word(s, c);
 	arr = (char **)malloc((size + 1) * sizeof(char *));
-	if (!arr)
-	{
-		while (0 < i)
-			free(arr[i--]);
-		free(arr);
+	if (NULL == arr)
 		return (NULL);
-	}
-	if (!ft_a(s, c))
-	{
-		arr[0] = 0;
-		return (arr);
-	}
-	arr = ft_rspl(arr, size, s, c);
+	arr[size] = NULL;
+	if (ft_rspl(arr, s, c))
+		return (NULL);
 	return (arr);
 }
 
@@ -108,15 +112,13 @@ int	main(void)
 	char const	*input;
 	char		**result;
 
-	input = NULL;
-	result = ft_split(input, '\0');
-	printf("%zu\n", ft_size(input, ' '));
-	//	printf("%u\n",ft_a(input, ' '));
-	// Use the result array as needed, e.g., print the elements
+	input = "  adam                  kkhobba         ";
+	result = ft_split(input, ' ');
+	printf("%zu\n", ft_count_word(input, ' '));
 	for (size_t i = 0; result[i] != NULL; i++)
 	{
 		printf("%s\n", result[i]);
-		free(result[i]); // Free each allocated substring
+		free(result[i]);
 	}
 	free(result); // Free the array of pointers
 	return (0);
