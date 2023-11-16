@@ -81,7 +81,7 @@ static int	ft_rspl(char **arr, char const *s, char c)
 			if (ft_put_malloc(arr, index, len + 1))
 				return (1);
 		}
-		ft_strlcpy(arr[index++], s -  len, len + 1);
+		ft_strlcpy(arr[index++], s - len, len + 1);
 	}
 	return (0);
 }
