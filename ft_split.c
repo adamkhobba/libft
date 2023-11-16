@@ -14,7 +14,7 @@
 
 static size_t	ft_count_word(char const *s, char c)
 {
-	size_t	check; 
+	size_t	check;
 	size_t	ken;
 	size_t	i;
 
@@ -43,49 +43,45 @@ static int	ft_put_malloc(char **arr, int index, size_t len)
 	size_t	p;
 
 	p = index;
-	arr[index] = (char *)malloc (len);
-	if(NULL == arr)
+	arr[index] = (char *)malloc(len);
+	if (NULL == arr)
 	{
 		while (p > 0)
 		{
-			free(arr[p]); 
+			free(arr[p]);
 			p--;
 		}
 		free(arr);
 		return (1);
 	}
-	return (0); 
+	return (0);
 }
 
 static int	ft_rspl(char **arr, char const *s, char c)
 {
-	size_t	i;
-	size_t len;
-	size_t	index;	
-	size_t	size;	
+	size_t	len;
+	size_t	index;
+	size_t	size;
 
-	i = 0;
 	len = 0;
 	index = 0;
 	size = ft_count_word(s, c);
-	while (index  < size)
+	while (index < size)
 	{
 		len = 0;
-		while(s[i] && s[i] == c)
-			i++;
-		while(s[i] && s[i] != c)
+		while (*s && *s == c)
+			s++;
+		while (*s && *s != c)
 		{
-			len++;	
-			i++;	
+			len++;
+			s++;
 		}
 		if (len)
 		{
 			if (ft_put_malloc(arr, index, len + 1))
 				return (1);
 		}
-		ft_strlcpy(arr[index] , s + (i - len), len + 1);
-		index++;
-		i++;
+		ft_strlcpy(arr[index++], s -  len, len + 1);
 	}
 	return (0);
 }
