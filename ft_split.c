@@ -46,9 +46,10 @@ static int	ft_put_malloc(char **arr, int index, size_t len)
 	arr[index] = (char *)malloc (len);
 	if(NULL == arr)
 	{
-		while (p >= 0)
+		while (p > 0)
 		{
-			free(arr[p--]); 
+			free(arr[p]); 
+			p--;
 		}
 		free(arr);
 		return (1);
@@ -93,7 +94,6 @@ char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 	size_t	size;
-	size_t	i;
 
 	if (NULL == s)
 		return (NULL);
@@ -106,7 +106,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (arr);
 }
-
+/*
 int	main(void)
 {
 	char const	*input;
@@ -122,4 +122,4 @@ int	main(void)
 	}
 	free(result); // Free the array of pointers
 	return (0);
-}
+}*/
