@@ -1,37 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 16:36:31 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/18 21:27:32 by akhobba          ###   ########.fr       */
+/*   Created: 2023/11/18 17:19:00 by akhobba           #+#    #+#             */
+/*   Updated: 2023/11/18 21:28:45 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list	*node;
-
-	node = malloc(sizeof(t_list));
-	if (node == NULL)
-		return (NULL);
-	node->content = content;
-	node->next = NULL;
-	return (node);
+	if (lst && new)
+	{
+		new->next = *lst;
+		*lst = new;		
+	}
 }
-/*
+
 int main ()
 {
-	int *nb;
+	t_list	*node1;
+	t_list	*node3;
+	int	n;
+	int	n2;
+	int	n1;
 
-	*nb = 42;
-		t_list *node = ft_lstnew(nb);
+	node1 = mallloc(sizeof(t_liste));
+	node->next = malloc (sizeof(t_liste));
 
-    printf("Node content: %d\n", *(int *)node->content);
-    free(node);
-	return (0);
-}*/
+	n = 42; 
+	n = 1337;
+
+	node->content = 42;
+	node->next->content = 1337;
+	node->next->next = NULL;
+
+	t_list	current;
+	current = node;
+	while (current)
+	{
+		printf("%d");
+	}
+}
