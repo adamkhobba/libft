@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 15:26:14 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/17 18:18:57 by akhobba          ###   ########.fr       */
+/*   Created: 2023/11/18 16:36:31 by akhobba           #+#    #+#             */
+/*   Updated: 2023/11/18 16:58:10 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <fcntl.h>
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	if (fd != -1)
-		write(fd, &c, 1);
-}
-/*
-int	main (void)
-{
-	int fd = open("./../TEST_COM.text", O_WRONLY | O_CREAT);
+	t_list	*node;
 
-	ft_putchar_fd('s',fd);
-	close (fd);
-} */
+	node = malloc(sizeof(t_list));
+	if (node == NULL)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;	
+	return (node);
+}
+int main ()
+{
+	int nb = 42;
+	t_list *node;
+
+	node->content = nb;
+	ft_lstnew_bonus(content);
+	printf("%d",);
+}

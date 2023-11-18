@@ -6,7 +6,7 @@
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 11:02:13 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/14 09:53:04 by akhobba          ###   ########.fr       */
+/*   Updated: 2023/11/18 16:33:43 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,10 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putendl_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
+//BONUS
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 #endif

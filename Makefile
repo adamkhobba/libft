@@ -6,7 +6,7 @@
 #    By: akhobba <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/14 09:51:36 by akhobba           #+#    #+#              #
-#    Updated: 2023/11/14 09:51:55 by akhobba          ###   ########.fr        #
+#    Updated: 2023/11/17 18:03:17 by akhobba          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,4 +34,6 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
+bonus : 
+	
 re: fclean all

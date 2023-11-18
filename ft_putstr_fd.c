@@ -6,11 +6,12 @@
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 15:29:25 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/13 12:08:49 by akhobba          ###   ########.fr       */
+/*   Updated: 2023/11/17 18:18:19 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+//#include <fcntl.h>
 
 void	ft_putstr_fd(char *s, int fd)
 {
@@ -19,9 +20,20 @@ void	ft_putstr_fd(char *s, int fd)
 	i = 0;
 	if (!s)
 		return ;
-	while (s[i])
+	if (fd != -1)
 	{
-		ft_putchar_fd(s[i], fd);
-		i++;
+		while (s[i])
+		{
+			ft_putchar_fd(s[i], fd);
+			i++;
+		}
 	}
 }
+/*
+int	main ()
+{
+	int fd = open("./../TEST_COM.text", O_WRONLY | O_CREAT);
+
+	ft_putchar_fd('s',fd);
+	close (fd);
+} */
