@@ -39,5 +39,5 @@ int main (void)
 
 	ret = ft_memchr(s,c,3);
 	printf("%s",ret);
-	return 0;
+	return (0);
 }*/

@@ -42,5 +42,5 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
     free(result);
 
-    return 0;
+    return (0);
 }*/

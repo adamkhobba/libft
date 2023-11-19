@@ -23,7 +23,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	if (n == 0)
 		return (0);
 	s11 = (unsigned char *)s1;
-	s22 = (unsigned char *) s2;
+	s22 = (unsigned char *)s2;
 	while ((s11[i] == s22[i]) && i < n - 1)
 		i++;
 	return (s11[i] - s22[i]);
@@ -35,5 +35,5 @@ int main ()
 	char s2 [] = "adamb";
 	int n = ft_memcmp(s1,s2,5);
 	printf("%d",n);
-	return 0;
+	return (0);
 }*/

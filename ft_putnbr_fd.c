@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
 //#include <fcntl.h>
 
 void	ft_putnbr_fd(int n, int fd)
@@ -35,7 +36,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 }
 /*
-int	main ()
+int	main (void)
 {
 	int fd = open("./../TEST_COM.text", O_WRONLY | O_CREAT);
 

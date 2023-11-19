@@ -1,43 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/19 11:07:46 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/19 12:23:35 by akhobba          ###   ########.fr       */
+/*   Created: 2023/11/19 20:48:33 by akhobba           #+#    #+#             */
+/*   Updated: 2023/11/19 21:07:18 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+void ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int	size;
-
-	size = 0;
-	while (lst)
+	if (!lst || !f)
+		return ;
+	while(lst)
 	{
+		f(lst->content);
 		lst = lst->next;
-		++size;
 	}
-	return (size);
 }
 /*
-int	main(void)
+void	f(void *v)
 {
-	t_list	*node_1;
-	int	n;
-	int	n1;
+	*(int*)v = 42 + 1; 	
+	}
 
-	node_1 = malloc(sizeof(t_list));
-	node_1->next = malloc(sizeof(t_list));
+int main ()
+{
+	t_list	*node;
+	int	*N;
 
-	node_1->content = &n;
-	node_1->next->content = &n1;
-	node_1->next->next = NULL;
+	node = malloc(sizeof(t_list));
+	node->next = malloc(sizeof(t_list));
+	N = malloc(sizeof(t_list));
+	*N = 422; 
+	node->content = N;
+	node->next = NULL;
 
-	printf("%d",ft_lstsize(node_1));	
-	return (0);
+	ft_lstiter(node,f);
+	return 0;
 }*/

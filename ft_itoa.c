@@ -39,7 +39,7 @@ char	*ft_itoa(int n)
 	p = (char *)malloc(j + 1);
 	if (!p)
 		return (NULL);
-	p [j--] = '\0';
+	p[j--] = '\0';
 	if (nbr < 0)
 	{
 		nbr = -nbr;

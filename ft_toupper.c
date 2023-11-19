@@ -24,7 +24,7 @@ int	ft_toupper(int c)
 /*int main ()
 {
 	int c;
-int  i = 'a';
+int	i = 'a';
     while (i <= 'z')
     {
         c = ft_toupper(i);

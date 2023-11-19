@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
 //#include <fcntl.h>
 
 void	ft_putendl_fd(char *s, int fd)
@@ -24,7 +25,7 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 }
 /*
-int	main ()
+int	main (void)
 {
 	int fd = open("./../TEST_COM.text", O_WRONLY | O_CREAT);
 

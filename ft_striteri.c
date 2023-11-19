@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	if (!s)
@@ -26,13 +26,13 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	}
 }
 /*
-void fupeer(unsigned int i, char *c)
+void	fupeer(unsigned int i, char *c)
 {
     if(*c >= 97 && *c <= 122)
             *c = *c - 32;
 }
 
-int main(void)
+int	main(void)
 {
     char input[] = "Hello, World!";
     printf("Original: %s\n", input);
@@ -40,5 +40,5 @@ int main(void)
     ft_striteri(input, &fupeer);
     printf("Modified: %s\n", input);
 
-    return 0;
+    return (0);
 }*/
