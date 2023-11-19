@@ -6,12 +6,12 @@
 #    By: akhobba <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/14 09:51:36 by akhobba           #+#    #+#              #
-#    Updated: 2023/11/18 21:50:25 by akhobba          ###   ########.fr        #
+#    Updated: 2023/11/19 15:07:27 by akhobba          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-#####################################
+#########################################
 #⠀⠀⠀⠀⠀⠀⠀⢀⡾⣇⠀⠀⠀⠀⠀⠀⢀⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀	#⠀
 #⠀⠀⠀⠀⠀⠀⠀⢸⡇⠻⣦⡀⠀⣀⣤⣀⣾⢯⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀	#⠀
 #⠀⠀⠀⠀⠀⠀⠀⠈⣧⠳⣽⣷⡞⢿⠿⠾⠿⢯⣘⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀	#⠀
@@ -35,8 +35,8 @@
 #⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧⠈⣿⣿⠀⠸⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀	#⠀
 #⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧⢻⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀	#⠀
 #⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀	#⠀
-#⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣻⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀    #⠀
-##################################### 
+#⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣻⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀    	#⠀
+######################################### 
 
 NAME = libft.a
 
@@ -47,7 +47,8 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 	  ft_tolower.c ft_toupper.c ft_strtrim.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 	  ft_strmapi.c ft_striteri.c ft_itoa.c ft_split.c
 
-SRC_BONUS = ft_lstnew_bonus.c
+SRC_BONUS = ft_lstnew_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
+		ft_lstadd_front_bonus.c ft_lstadd_back_bonus.c 
 
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
@@ -61,7 +62,7 @@ $(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ) 
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
 	rm -f $(NAME)

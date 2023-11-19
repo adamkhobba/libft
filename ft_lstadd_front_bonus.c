@@ -6,7 +6,7 @@
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 17:19:00 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/19 09:52:06 by akhobba          ###   ########.fr       */
+/*   Updated: 2023/11/19 12:32:49 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,4 @@ int main ()
 		printf("%d",*(int*)current->content);
 		current = current->next;
 	}
-}*/
+}
