@@ -14,28 +14,43 @@
 
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*twp;
-	t_list	*new_list;
-	t_list	*node;
+	t_list	*new_lst;
+	t_list	*new_node;
 	
 	if (!lst)
-		return (NULL);
-//  new_list = NULL;
-	ft_lstiter(lst,f);
-	new_list = malloc(sizeof(t_list)); 
-	twp = lst;
-	while (twp)
-	{ 
-		twp->content = new_lst->content;
-		new_lst->next = malloc(sizeof(t_list)); 
-		new_lst = new_list->next;
-		twp = twp->next;
-	}
-	twp = lst;
-  while (twp)
+		return ( );
+  new_lst = NULL; 
+	while (lst)
   { 
-    ft_lstdelone(lst,del);
+    if (f)
+        new_node = ft_lstnew(f(lst->content));
+    else
+        new_node = ft_lstnew(lst->content);
+    if (!new_node)
+    {
+      ft_lstclear(&new_lst,del);
+      return (NULL);
+    }
+    ft_lstadd_back(&new_list,new_node);
     lst = lst->next;
-  } 
-  return (new_lst); 
+  }
+  return (new_lst);
 }
+///*
+int main ()
+{
+  t_list  node;
+  int *N; 
+
+  node = malloc (sizeof(t_list);
+  node->next = malloc (sizeof(t_list));
+  node->next->next = malloc (sizeof(t_list));
+  N = malloc(int);
+
+  *N = 3124;
+  node->content = N;
+  node->next->content = ft_strdup("suu");
+  node->next->next = NULL; 
+ 
+  ft_lstmap(node,f,del);
+}//*/
