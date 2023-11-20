@@ -20,8 +20,6 @@ static int ft_check(const char *s,int n,int f)
   if (!s)
     return 0;
   k = ft_strlen(s);
-  if (k == 20 && s[k - 1] == '7')
-    return -1;
   if (k >= 19)
   {
     if (f == -1)
@@ -49,14 +47,16 @@ int	ft_atoi(const char *nptr)
 		i++;
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{ n = n * 10 + (((char *)nptr)[i++] - 48); }
+	{
+		n = n * 10 + (((char *)nptr)[i++] - 48);
+	}
  n =  ft_check(nptr,n,f);
 	return (n * f);
 }
 
 int main (void)
 {
-	const char s[] = "9223372036854775808";
+	const char s[] = "9223372036854775807000000000";
 //	const char s[] = "92";
 	int n = ft_atoi(s);
 	printf("My aoti = %d\n", n); 
