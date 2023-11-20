@@ -18,7 +18,7 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_node;
 	
 	if (!lst)
-		return ( );
+		return ;
   new_lst = NULL; 
 	while (lst)
   { 
@@ -31,18 +31,18 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
       ft_lstclear(&new_lst,del);
       return (NULL);
     }
-    ft_lstadd_back(&new_list,new_node);
+    ft_lstadd_back(&new_lst,new_node);
     lst = lst->next;
   }
   return (new_lst);
 }
-///*
+/*
 int main ()
 {
-  t_list  node;
+  t_list  *node;
   int *N; 
 
-  node = malloc (sizeof(t_list);
+  node = malloc (sizeof(t_list));
   node->next = malloc (sizeof(t_list));
   node->next->next = malloc (sizeof(t_list));
   N = malloc(int);
@@ -53,4 +53,4 @@ int main ()
   node->next->next = NULL; 
  
   ft_lstmap(node,f,del);
-}//*/
+}*/

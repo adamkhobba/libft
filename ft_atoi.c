@@ -13,6 +13,10 @@
 //#include <stdio.h>
 #include "libft.h"
 
+static int ft_check(const char *s)
+{
+}
+
 int	ft_atoi(const char *nptr)
 {
 	int		i;
@@ -39,9 +43,10 @@ int	ft_atoi(const char *nptr)
 	}
 	return (n * f);
 }
-/*int main (void)
+int main (void)
 {
-	const char s[] = "123";
+	const char s[] = "9223372036854775809";
 	int n = ft_atoi(s);
 	printf("%d", n); 
-}*/
+	printf("%d", atoi(s)); 
+}
