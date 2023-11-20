@@ -23,9 +23,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 void	del(void *data) 
 {
      free(data);
-}
-int	main(void)
-{
+} int	main(void) {
      	t_list	*node;
 	int	*N;
 	node = (t_list *)malloc(sizeof(t_list));
