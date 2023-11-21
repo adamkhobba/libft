@@ -31,7 +31,7 @@ int main ()
 	*nb = 42;
 		t_list *node = ft_lstnew(nb);
 
-    printf("Node content: %d\n", *(int *)node->content);
-    free(node);
+	printf("Node content: %d\n", *(int *)node->content);
+	free(node);
 	return (0);
 }*/

@@ -40,7 +40,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 int main ()
 {
   t_list  *node;
-  int *N; 
+  int *N;
 
   node = malloc (sizeof(t_list));
   node->next = malloc (sizeof(t_list));
@@ -50,7 +50,7 @@ int main ()
   *N = 3124;
   node->content = N;
   node->next->content = ft_strdup("suu");
-  node->next->next = NULL; 
- 
+  node->next->next = NULL;
+
   ft_lstmap(node,f,del);
 }*/

@@ -41,12 +41,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (arr);
 }
 /*
- int main()
+int	main(void)
 {
- 	char    *str;
+	char	*str;
 
-     str = ft_substr("Hello World", 5, 5);
-     printf("%s\n", str);
-
-     free(str);
+	str = ft_substr("", 0, 0);
+	printf("%s\n", str);
+	free(str);
 }*/

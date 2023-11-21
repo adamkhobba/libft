@@ -25,10 +25,10 @@ int	ft_toupper(int c)
 {
 	int c;
 int	i = 'a';
-    while (i <= 'z')
-    {
-        c = ft_toupper(i);
-        write(1, &c, 1);
-        i++;
-    }
+	while (i <= 'z')
+	{
+		c = ft_toupper(i);
+		write(1, &c, 1);
+		i++;
+	}
 }*/

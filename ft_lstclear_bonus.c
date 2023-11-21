@@ -29,23 +29,23 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	*lst = NULL;
 }
 /*
-void	del(void *data) 
+void	del(void *data)
 {
-     free(data);
+		free(data);
 }
 
 int main ()
 {
 	t_list	*node_0;
-	
+
 	node_0 = malloc(sizeof(t_list));
-	node_0->next = malloc(sizeof(t_list));	
-	node_0->next->next = malloc(sizeof(t_list));	
+	node_0->next = malloc(sizeof(t_list));
+	node_0->next->next = malloc(sizeof(t_list));
 
 	node_0->content = ft_strdup("hhi");
 	node_0->next->content = ft_strdup("suu");
 	node_0->next->next = NULL;
-	
+
 	ft_lstclear(&node_0,del);
 	return (0);
 }*/

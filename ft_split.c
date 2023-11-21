@@ -49,8 +49,7 @@ static int	ft_put_malloc(char **arr, int index, size_t len)
 		while (p > 0)
 		{
 			free(arr[p]);
-			p--;
-		}
+			p--; }
 		free(arr);
 		return (1);
 	}

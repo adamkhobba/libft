@@ -33,7 +33,7 @@ int main ()
 	node1->next = malloc (sizeof(t_list));
 	node0 = malloc(sizeof(t_list));
 
-	n = 42; 
+	n = 42;
 	n1= 1337;
 	n2 = 21;
 

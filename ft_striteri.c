@@ -28,17 +28,17 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 /*
 void	fupeer(unsigned int i, char *c)
 {
-    if(*c >= 97 && *c <= 122)
-            *c = *c - 32;
+	if(*c >= 97 && *c <= 122)
+			*c = *c - 32;
 }
 
 int	main(void)
 {
-    char input[] = "Hello, World!";
-    printf("Original: %s\n", input);
+	char input[] = "Hello, World!";
+	printf("Original: %s\n", input);
 
-    ft_striteri(input, &fupeer);
-    printf("Modified: %s\n", input);
+	ft_striteri(input, &fupeer);
+	printf("Modified: %s\n", input);
 
-    return (0);
+	return (0);
 }*/

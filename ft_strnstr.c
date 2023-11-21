@@ -39,7 +39,7 @@ int main ()
 {
 	char big [] = "hunterxhunter";
 	char little [] = "x";
-	
+
 	printf("%s",ft_strnstr(big,little,10));
 	return (0);
 }*/

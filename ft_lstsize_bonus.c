@@ -38,6 +38,6 @@ int	main(void)
 	node_1->next->content = &n1;
 	node_1->next->next = NULL;
 
-	printf("%d",ft_lstsize(node_1));	
+	printf("%d",ft_lstsize(node_1));
 	return (0);
 }*/

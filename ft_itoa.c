@@ -56,8 +56,8 @@ char	*ft_itoa(int n)
 /*
 int main ()
 {
-    int n = -2147483648;
-    printf("size = %d\n",ft_count(n));
-    printf("p = %s",ft_itoa(n));
-    return (0);
+	int n = -2147483648;
+	printf("size = %d\n",ft_count(n));
+	printf("p = %s",ft_itoa(n));
+	return (0);
 }*/

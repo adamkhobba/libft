@@ -34,13 +34,13 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 }
 /*int main(void)
 {
-    char input[] = "Hello, World!";
-    char *result = ft_strmapi(input, &ft_toupper);
+	char input[] = "Hello, World!";
+	char *result = ft_strmapi(input, &ft_toupper);
 
-    printf("Original: %s\n", input);
-    printf("Modified: %s\n", result);
+	printf("Original: %s\n", input);
+	printf("Modified: %s\n", result);
 
-    free(result);
+	free(result);
 
-    return (0);
+	return (0);
 }*/

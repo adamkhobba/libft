@@ -25,7 +25,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 /*
 void	f(void *v)
 {
-	*(int*)v = 42 + 1; 	
+	*(int*)v = 42 + 1;
 	}
 
 int main ()
@@ -36,7 +36,7 @@ int main ()
 	node = malloc(sizeof(t_list));
 	node->next = malloc(sizeof(t_list));
 	N = malloc(sizeof(t_list));
-	*N = 422; 
+	*N = 422;
 	node->content = N;
 	node->next = NULL;
 

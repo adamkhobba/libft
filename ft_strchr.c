@@ -30,7 +30,7 @@ char	*ft_strchr(const char *s, int c)
 
 /* int main()
  {
- 	char s1[] = "adam kkhhobba";
+	char s1[] = "adam kkhhobba";
 
- 	printf("%s", ft_strchr(s1, 'x'));
+	printf("%s", ft_strchr(s1, 'x'));
  }*/

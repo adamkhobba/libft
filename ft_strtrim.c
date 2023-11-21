@@ -45,7 +45,7 @@ int main ()
 	char s[] = "-adamkh+obba-+";
 	char set[] = "-=+";
 	char *p;
-	
+
 	p = ft_strtrim(s,set);
 	printf("%s", p);
 	return (0);

@@ -30,7 +30,7 @@ int	main(void)
 	int	n1;
 
 	n = 42;
-	n1 = 1337; 
+	n1 = 1337;
 	node_1 = malloc(sizeof(t_list));
 	node_1->next = malloc(sizeof(t_list));
 
@@ -39,8 +39,8 @@ int	main(void)
 	node_1->next->next = NULL;
 
 	t_list	*lastnode;
-	
+
 	lastnode = ft_lstlast(node_1);
-	printf("%d", *(int *)lastnode->content);	
+	printf("%d", *(int *)lastnode->content);
 	return (0);
 }*/
