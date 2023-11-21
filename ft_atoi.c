@@ -29,7 +29,8 @@ static int	ft_check(const char *s, int n, int f, int k1)
 	if (k - k1 >= 19)
 	{
 		if (f == -1)
-			return (0); else
+			return (0);
+		else
 			return (-1);
 	}
 	else
