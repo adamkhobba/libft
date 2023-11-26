@@ -108,14 +108,14 @@ int	main(void)
 	char const	*input;
 	char		**result;
 
-	input = "  adam                  kkhobba         ";
-	result = ft_split(input, ' ');
-	printf("%zu\n", ft_count_word(input, ' '));
+ input = "adakkhobba";
+	result = ft_split(NULL, '\0');
+//	printf("%zu\n", ft_count_word(input, ' '));
 	for (size_t i = 0; result[i] != NULL; i++)
 	{
-		printf("%s\n", result[i]);
-		free(result[i]);
+	printf("%s\n", result[i]);
+	free(result[i]);
 	}
-	free(result); // Free the array of pointers
+	free(result); 	
 	return (0);
 }*/
