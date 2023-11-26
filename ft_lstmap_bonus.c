@@ -45,7 +45,7 @@ int main ()
   node = malloc (sizeof(t_list));
   node->next = malloc (sizeof(t_list));
   node->next->next = malloc (sizeof(t_list));
-  N = malloc(int);
+  N = malloc(4);
 
   *N = 3124;
   node->content = N;

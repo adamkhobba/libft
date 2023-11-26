@@ -16,6 +16,8 @@ void	*ft_calloc(size_t num, size_t size)
 {
 	void	*ptr;
 
+	if (count != 0 && ((size * count) / count) != size)
+		return (NULL);
 	ptr = malloc(num * size);
 	if (ptr)
 	{
@@ -24,3 +26,10 @@ void	*ft_calloc(size_t num, size_t size)
 	}
 	return (NULL);
 }
+/*
+int main ()
+{
+	int *arr = (int *)calloc(21447483648,4);
+	printf("%d",arr[0]);
+
+}*/
