@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 #include "libft.h"
 
 static int	ft_check(const char *s, int n, int f, int k1)

@@ -52,9 +52,9 @@ static int	ft_put_malloc(char **arr, int index, size_t len)
 			p--;
 		}
 		free(arr);
-		return (1);
+		return (0);
 	}
-	return (0);
+	return (1);
 }
 
 static int	ft_rspl(char **arr, char const *s, char c)
@@ -78,12 +78,12 @@ static int	ft_rspl(char **arr, char const *s, char c)
 		}
 		if (len)
 		{
-			if (ft_put_malloc(arr, index, len + 1))
-				return (1);
+			if (!ft_put_malloc(arr, index, len + 1))
+				return (0);
 		}
 		ft_strlcpy(arr[index++], s - len, len + 1);
 	}
-	return (0);
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
@@ -98,7 +98,7 @@ char	**ft_split(char const *s, char c)
 	if (NULL == arr)
 		return (NULL);
 	arr[size] = NULL;
-	if (ft_rspl(arr, s, c))
+	if (!ft_rspl(arr, s, c))
 		return (NULL);
 	return (arr);
 }
@@ -108,8 +108,8 @@ int	main(void)
 	char const	*input;
 	char		**result;
 
- input = "adakkhobba";
-	result = ft_split(NULL, '\0');
+ input = "  ada,, kk       hobba   ";
+	result = ft_split(input, ' ');
 //	printf("%zu\n", ft_count_word(input, ' '));
 	for (size_t i = 0; result[i] != NULL; i++)
 	{
