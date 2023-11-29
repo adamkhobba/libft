@@ -29,7 +29,7 @@ void	*ft_calloc(size_t num, size_t size)
 /*
 int main ()
 {
-	int *arr = (int *)calloc(21447483648,4);
+	int *arr = (int *)calloc(21443648,4);
 	printf("%d",arr[0]);
 
 }*/
